@@ -89,7 +89,7 @@
 
 </div>
 <div class="slider">
-    <div class="carousel slide" data-ride="carousel">
+    <div id="banner-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="crFlex">
@@ -130,6 +130,15 @@
                     </p>
                 </div>
             </div>
+
+            <a class="carousel-control-prev" href="#banner-carousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#banner-carousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
 
         </div>
 
@@ -210,6 +219,7 @@
                 </svg>
             </a></li>
         </ul>
+        <div class="visits">Visits: <span id="visitors-count"></span></div>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -219,7 +229,20 @@
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
 <script>
-    $('.carousel').carousel({
+
+    visitCountEl = document.getElementById('visitors-count');
+
+    updateVisitCount();
+
+    function updateVisitCount() {
+        fetch("https://api.countapi.xyz/update/pws-hosting/visits/?amount=1")
+            .then(res => res.json())
+            .then(res => {
+                visitCountEl.innerHTML = res.value;
+            })
+    }
+
+    $('#banner-carousel').carousel({
         interval: 2000
     })
 

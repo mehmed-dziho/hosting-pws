@@ -260,9 +260,31 @@ svg {
 
 .footer a {
     color: #25e3f5;
+    opacity: 0.8;
+}
+
+.footer a:hover {
+    color: #25e3f5;
+    opacity: 1;
+    text-decoration: none;
 }
 
 .findUs svg {
     height: 25px;
     stroke: #25e3f5;
+}
+
+.findUs {
+    display: flex;
+    flex-direction: column;
+}
+
+.visits {
+    color: #25e3f5;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.visits > span {
+    color: #fff;
 }
