@@ -1,217 +1,268 @@
-*{
+* {
     box-sizing: border-box;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
-:root{
-    --zelena:#42f739;
+
+:root {
+    --siva: #787878;
+    --zelena: #44d600;
+    --druga-zelena: #42f739;
+    --header-height: 60px;
 }
-body{
+
+body {
     overflow-y: scroll;
 }
 
-.header{
-    display:flex;
+.header {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding:0 20px;
-    color:#04e824;
-    background-color:white;
-    
+    padding: 10px 20px;
+    color: var(--siva);
+    background-color: white;
+    height: var(--header-height);
 }
 
 
-.header ul{
-    margin:0;
+.header ul {
+    margin: 0;
     list-style: none;
 }
-.header ul li{
+
+.header ul li {
     display: inline-block;
-    margin:0 20px;
+    margin: 0 20px;
 }
-.cover{
-    background:url("wallpaper.jpg");
+
+.cover {
+    background: url("wallpaper.jpg");
     background-size: cover;
-    height:95vh;
-    width:100%;
+    width: 100%;
 }
-.getting-started{
+
+.getting-started {
     display: flex;
     width: 100%;
-    height:100%;
     justify-content: space-around;
+    height: calc(100vh - var(--header-height));
 }
-.middle{
+
+.middle {
     display: flex;
     justify-content: center;
-    height:100%;
+    height: 100%;
     align-items: center;
     flex-direction: column;
-    color:white;
-} 
-.middle *{
+    color: white;
+}
+
+.middle * {
     margin-top: 15px;
 }
-.button{
-    background-color:white;
-    color:#04e824;
-    padding:12px;
-    width:200px;
-    font-size:18px;
+
+.button {
+    background-color: white;
+    color: var(--siva);
+    padding: 12px;
+    width: 200px;
+    font-size: 18px;
     font-weight: 600;
-    border:none;
     border-radius: 25px;
     cursor: pointer;
-    
+    transition: all 150ms ease-in-out;
+    outline: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }
-.plans-wrapper{ 
 
-display: flex;
-flex-direction: column;
-text-align: center;
-padding: 30px;
+.button:hover {
+    transform: scale(1.05);
 }
-.plans{
+
+.plans-wrapper {
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+}
+
+.plans {
     flex-wrap: wrap;
     display: flex;
     flex-direction: row;
-    margin:50px auto;
+    margin: 50px auto;
     justify-content: center;
+    max-width: 1200px;
 }
-.plan{
+
+.plan {
     background-color: white;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width:300px;
-    border:0.5px solid #25e3f5;
+    width: 300px;
+    border: 0.5px solid var(--zelena);
     border-radius: 5px;
-    margin:20px 20px;
+    margin: 20px 20px;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 20px 20px;
     transition: top ease 0.5s;
-    top:0;
+    top: 0;
 }
-.plan spam{
+
+.plan spam {
     font-size: 14px;
 }
-.plan:hover
-{
-    top:-15px;
+
+.plan:hover {
+    top: -15px;
 }
-.plan:nth-child(2),.plan:nth-child(5){
-    top:-15px;
+
+.plan:nth-child(2), .plan:nth-child(5) {
+    top: -15px;
     border-radius: 0;
-} 
-.plan:nth-child(2):hover,.plan:nth-child(5):hover{
-    top:-30px;
 }
-.plan *{
-    margin:5px 0;
+
+.plan:nth-child(2):hover, .plan:nth-child(5):hover {
+    top: -30px;
 }
-.btnLearnMore{
-    background-color:white;
-    color:var(--zelena);
-    padding:12px;
-    width:200px;
-    font-size:18px;
+
+.plan * {
+    margin: 5px 0;
+}
+
+.plan > button {
+    background-color: white;
+    color: var(--zelena);
+    padding: 12px;
+    width: 200px;
+    font-size: 18px;
     font-weight: 600;
-    border:1px solid var(--zelena);
+    border: 1px solid var(--zelena);
     cursor: pointer;
-    margin-top:15px;
-    
+    margin-top: 15px;
+    outline: none !important;
+    /*border-radius: 25px;*/
 }
-.btnLearnMore:hover{
+
+.plan > button:hover {
     background-color: var(--zelena);
-    color:white;
+    color: white;
 }
-.plans-wrapper a{ 
-    color:#25e3f5;
+
+.download-plans {
+    color: var(--siva);
+    width: fit-content;
+    margin: auto;
 }
-svg{
+
+.download-plans:hover {
+    color: var(--zelena);
+    text-decoration: none;
+}
+
+svg {
     margin-left: 10px;
 }
-.slider{
+
+.slider {
     width: 100%;
     display: flex;
     position: sticky;
-    padding:40px;
+    padding: 40px;
     justify-content: space-around;
 }
-.slide{
-    width:700px;
-    height:200px;
+
+.slide {
+    width: 700px;
+    height: 200px;
 }
-.slide img{
-    width:50%;
-    height:250px;
+
+.slide img {
+    width: 50%;
+    height: 250px;
 }
-.crFlex{
+
+.crFlex {
     display: flex;
     flex-direction: row;
 }
-.crFlex p{
-    margin-left:40px;
+
+.crFlex p {
+    margin-left: 40px;
     font-style: italic;
 }
-.crFlex p img{
-    width:40px;
-    height:40px;
+
+.crFlex p img {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    margin-top:20px;
+    margin-top: 20px;
 }
-.crFlex p strong{
+
+.crFlex p strong {
     position: relative;
-    top:10px;
-    left:10px;
+    top: 10px;
+    left: 10px;
 }
-.crFlex p spam{
+
+.crFlex p spam {
     position: relative;
-    top:-15px;
-    left:50px;
+    top: -15px;
+    left: 50px;
     font-size: 14px;
 }
-.footer{
+
+.footer {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top:100px;
+    margin-top: 100px;
     background-color: #333;
-    width:100%;
-    padding:40px;
-    color:white;
-}
-.footer ul{
-    list-style: none;
-}
-.report form {
-    width:400px;
-    display: flex;
-    flex-direction: column;
-    color:white;
-}
-.report input{
-    margin-bottom: 10px;
-    border:1px solid white;
+    width: 100%;
+    padding: 40px;
+    color: white;
 }
 
-#accordion{
+.footer ul {
+    list-style: none;
+}
+
+.report form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.report input {
+    margin-bottom: 10px;
+    border: 1px solid white;
+}
+
+#accordion {
     border: none;
 }
-.card{
+
+.card {
     margin-bottom: 10px;
     box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.19);
 }
-.findUs li{
+
+.findUs li {
     display: inline-block;
-    
+
 }
-.footer a{
-    color:#25e3f5;
+
+.footer a {
+    color: #25e3f5;
 }
-.findUs svg{
+
+.findUs svg {
     height: 25px;
     stroke: #25e3f5;
 }
